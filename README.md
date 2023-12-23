@@ -227,9 +227,9 @@ int entry(byte *source, undefined4 unused, byte *destination) {
     }
 
     return (int)destinationPointer - (int)destination;
-##[Support More of my work]
-##[Binance_ID:271854090]
-##[Long_Live_Palestine 🇵🇸]
+## [Support More of my work]
+## [Binance_ID:271854090]
+## [Long_Live_Palestine 🇵🇸]
 ![Human_christmas](https://github.com/maxamin/Baby_Research/raw/main/resources/human_christmas.jpg)
 
 
