@@ -1,5 +1,5 @@
 # Baby_Research (For educational purposes only)
-![GitHub Logo](https://github.com/maxamin/Baby_Research/raw/main/resources/logo.png)
+![GitHub Logo](https://github.com/maxamin/Baby_Research/blob/main/resources/logo.jpg?raw=true)
 
 Attempt to reverse 0xcheats.net MTA cheat 
 Multi Theft Auto (MTA) is a modification for the popular video game "Grand Theft Auto: San Andreas." It is designed to enhance the multiplayer aspect of the game by providing players with the ability to connect to servers and engage in various multiplayer game modes. MTA expands upon the original single-player experience of Grand Theft Auto: San Andreas by introducing a dynamic and customizable multiplayer environment.
