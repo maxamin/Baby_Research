@@ -227,7 +227,6 @@ int entry(byte *source, undefined4 unused, byte *destination) {
     }
 
     return (int)destinationPointer - (int)destination;
-}
 ![Merry_christmas]("https://github.com/maxamin/Baby_Research/raw/main/resources/human_christmas.jpg?raw=true")
 
 #Binance_ID:271854090#
