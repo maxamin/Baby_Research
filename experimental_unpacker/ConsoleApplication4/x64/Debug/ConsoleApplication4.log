@@ -1,0 +1,9 @@
+﻿  ConsoleApplication4.cpp
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(8): warning C4081: expected 'newline'; found '.'
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(106): warning C4311: 'type cast': pointer truncation from 'uint8_t *' to 'int'
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(106): warning C4302: 'type cast': truncation from 'uint8_t *' to 'int'
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(172): warning C4311: 'type cast': pointer truncation from 'uint8_t *' to 'int'
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(172): warning C4302: 'type cast': truncation from 'uint8_t *' to 'int'
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(188): warning C4311: 'type cast': pointer truncation from 'uint8_t *' to 'int'
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(188): warning C4302: 'type cast': truncation from 'uint8_t *' to 'int'
+  ConsoleApplication4.vcxproj -> C:\Users\test\source\repos\ConsoleApplication4\x64\Debug\ConsoleApplication4.exe

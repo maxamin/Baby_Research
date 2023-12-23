@@ -1,0 +1,5 @@
+﻿  ConsoleApplication4.cpp
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(26): warning C4244: 'argument': conversion from 'std::streamoff' to 'const unsigned int', possible loss of data
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(93): error C4146: unary minus operator applied to unsigned type, result still unsigned
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(159): error C4146: unary minus operator applied to unsigned type, result still unsigned
+C:\Users\test\source\repos\ConsoleApplication4\ConsoleApplication4\ConsoleApplication4.cpp(193): warning C4101: 'fileSize': unreferenced local variable
