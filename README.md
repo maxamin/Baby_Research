@@ -228,6 +228,10 @@ int entry(byte *source, undefined4 unused, byte *destination) {
 
     return (int)destinationPointer - (int)destination;
 ## [Support More of my work]
+For the future commits i will try to caputre or bruteforce a 0xcheats key and establish kernel debugging in my vm to unlock the full functionalities that did not get unpacked (i wont pay to get a key)
+i will dump the entire unpacked process using process dump
+will complete my MITM proxy to forge requests and responses
+will work more on an OOB W/R Bug in FairPlayKD
 ## [Binance_ID:271854090]
 ## [Merry Christmas to_Palestine 🇵🇸]
 
