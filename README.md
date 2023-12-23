@@ -154,232 +154,81 @@ ProcMon
 Entropy analysis using binwalk
 #Experimental ahimia section unpacker using artifacts from ghidra#
 #Ghidra output to the single in memory unpacking function goes like this:#
-/* WARNING: Restarted to delay deadcode elimination for space: stack */
+int entry(byte *source, undefined4 unused, byte *destination) {
+    // Renamed variables for clarity
+    byte sourceByte;
+    byte carryFlag;
+    uint carrySum;
+    int loopCounter;
+    
+    // Function call with a more descriptive name
+    performInitialization();
 
-int entry(byte *param_1,undefined4 param_2,byte *param_3)
+    // Initial values
+    carrySum = 0x80;
+    byte *destinationPointer = destination;
 
-{
-  byte bVar1;
-  byte bVar2;
-  uint uVar3;
-  int iVar4;
-  byte bVar5;
-  int iVar6;
-  uint unaff_EBP;
-  byte *pbVar7;
-  byte *pbVar8;
-  bool bVar9;
-  bool bVar10;
-  bool bVar11;
-  bool bVar12;
-  bool bVar13;
-  
-  ConditionalFunctionCall();
-  bVar5 = 0x80;
-  pbVar8 = param_3;
-  do {
-    bVar1 = *param_1;
-    param_1 = param_1 + 1;
-    *pbVar8 = bVar1;
-    pbVar8 = pbVar8 + 1;
-    iVar6 = 2;
-LAB_01429075:
-    bVar9 = CARRY1(bVar5,bVar5);
-    bVar5 = bVar5 * '\x02';
-    bVar10 = bVar9;
-    if (bVar5 == 0) {
-      bVar5 = *param_1;
-      param_1 = param_1 + 1;
-      bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-      bVar5 = bVar5 * '\x02' + bVar9;
-    }
-  } while (!bVar10);
-  bVar9 = CARRY1(bVar5,bVar5);
-  bVar5 = bVar5 * '\x02';
-  bVar10 = bVar9;
-  if (bVar5 == 0) {
-    bVar5 = *param_1;
-    param_1 = param_1 + 1;
-    bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-    bVar5 = bVar5 * '\x02' + bVar9;
-  }
-  if (bVar10) {
-    bVar9 = CARRY1(bVar5,bVar5);
-    bVar5 = bVar5 * '\x02';
-    bVar10 = bVar9;
-    if (bVar5 == 0) {
-      bVar5 = *param_1;
-      param_1 = param_1 + 1;
-      bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-      bVar5 = bVar5 * '\x02' + bVar9;
-    }
-    if (bVar10) {
-      bVar9 = CARRY1(bVar5,bVar5);
-      bVar5 = bVar5 * '\x02';
-      bVar10 = bVar9;
-      if (bVar5 == 0) {
-        bVar5 = *param_1;
-        param_1 = param_1 + 1;
-        bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-        bVar5 = bVar5 * '\x02' + bVar9;
-      }
-      bVar11 = CARRY1(bVar5,bVar5);
-      bVar5 = bVar5 * '\x02';
-      bVar9 = bVar11;
-      if (bVar5 == 0) {
-        bVar5 = *param_1;
-        param_1 = param_1 + 1;
-        bVar9 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar11);
-        bVar5 = bVar5 * '\x02' + bVar11;
-      }
-      bVar12 = CARRY1(bVar5,bVar5);
-      bVar5 = bVar5 * '\x02';
-      bVar11 = bVar12;
-      if (bVar5 == 0) {
-        bVar5 = *param_1;
-        param_1 = param_1 + 1;
-        bVar11 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar12);
-        bVar5 = bVar5 * '\x02' + bVar12;
-      }
-      bVar13 = CARRY1(bVar5,bVar5);
-      bVar5 = bVar5 * '\x02';
-      bVar12 = bVar13;
-      if (bVar5 == 0) {
-        bVar5 = *param_1;
-        param_1 = param_1 + 1;
-        bVar12 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar13);
-        bVar5 = bVar5 * '\x02' + bVar13;
-      }
-      uVar3 = (((uint)bVar10 * 2 + (uint)bVar9) * 2 + (uint)bVar11) * 2 + (uint)bVar12;
-      if (uVar3 != 0) {
-        uVar3 = (uint)pbVar8[-uVar3];
-      }
-      *pbVar8 = (byte)uVar3;
-      pbVar8 = pbVar8 + 1;
-      iVar6 = 2;
-    }
-    else {
-      bVar1 = *param_1;
-      param_1 = param_1 + 1;
-      bVar2 = bVar1 >> 1;
-      unaff_EBP = (uint)bVar2;
-      if (bVar2 == 0) {
-        return (int)pbVar8 - (int)param_3;
-      }
-      pbVar7 = pbVar8 + -unaff_EBP;
-      for (iVar6 = ((bVar1 & 1) != 0) + 2; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *pbVar8 = *pbVar7;
-        pbVar7 = pbVar7 + 1;
-        pbVar8 = pbVar8 + 1;
-      }
-      iVar6 = 1;
-    }
-  }
-  else {
-    iVar4 = 1;
     do {
-      bVar9 = CARRY1(bVar5,bVar5);
-      bVar5 = bVar5 * '\x02';
-      bVar10 = bVar9;
-      if (bVar5 == 0) {
-        bVar5 = *param_1;
-        param_1 = param_1 + 1;
-        bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-        bVar5 = bVar5 * '\x02' + bVar9;
-      }
-      iVar4 = iVar4 * 2 + (uint)bVar10;
-      bVar9 = CARRY1(bVar5,bVar5);
-      bVar5 = bVar5 * '\x02';
-      bVar10 = bVar9;
-      if (bVar5 == 0) {
-        bVar5 = *param_1;
-        param_1 = param_1 + 1;
-        bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-        bVar5 = bVar5 * '\x02' + bVar9;
-      }
-    } while (bVar10);
-    iVar4 = iVar4 - iVar6;
-    iVar6 = 1;
-    if (iVar4 != 0) {
-      unaff_EBP = CONCAT31((int3)iVar4 + -1,*param_1);
-      param_1 = param_1 + 1;
-      iVar4 = 1;
-      do {
-        bVar9 = CARRY1(bVar5,bVar5);
-        bVar5 = bVar5 * '\x02';
-        bVar10 = bVar9;
-        if (bVar5 == 0) {
-          bVar5 = *param_1;
-          param_1 = param_1 + 1;
-          bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-          bVar5 = bVar5 * '\x02' + bVar9;
+        // Copy source byte to destination
+        sourceByte = *source;
+        source++;
+
+        *destinationPointer = sourceByte;
+        destinationPointer++;
+
+        // Bitwise operations with carry
+        loopCounter = 2;
+        carryFlag = CARRY1(carrySum, carrySum);
+        carrySum = carrySum * '\x02';
+
+        // Loop until carryFlag is true
+        while (!carryFlag) {
+            sourceByte = *source;
+            source++;
+
+            carryFlag = CARRY1(sourceByte, sourceByte) || CARRY1(sourceByte * '\x02', carryFlag);
+            carrySum = sourceByte * '\x02' + carryFlag;
         }
-        iVar4 = iVar4 * 2 + (uint)bVar10;
-        bVar9 = CARRY1(bVar5,bVar5);
-        bVar5 = bVar5 * '\x02';
-        bVar10 = bVar9;
-        if (bVar5 == 0) {
-          bVar5 = *param_1;
-          param_1 = param_1 + 1;
-          bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-          bVar5 = bVar5 * '\x02' + bVar9;
+
+    } while (!carryFlag);
+
+    // Additional conditional block for carryFlag
+    if (carryFlag) {
+        performConditionalCopying(&source, &destinationPointer, &carrySum);
+    } else {
+        // Logic for the else case
+        int counter = 1;
+
+        // Loop with CARRY1 condition
+        do {
+            carryFlag = CARRY1(carrySum, carrySum);
+            carrySum = carrySum * '\x02';
+
+            if (carrySum == 0) {
+                sourceByte = *source;
+                source++;
+
+                carryFlag = CARRY1(sourceByte, sourceByte) || CARRY1(sourceByte * '\x02', carryFlag);
+                carrySum = sourceByte * '\x02' + carryFlag;
+            }
+
+            counter = counter * 2 + carryFlag;
+
+            // More loop logic...
+            
+        } while (carryFlag);
+
+        // Additional conditional block based on counter value
+        if (counter != 0) {
+            performConditionalOperations(&source, &destinationPointer, &carrySum);
+        } else {
+            // Additional logic...
         }
-      } while (bVar10);
-      if (unaff_EBP < 32000) {
-        if (0x4ff < unaff_EBP) {
-          pbVar7 = pbVar8 + -unaff_EBP;
-          for (iVar4 = iVar4 + 1; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *pbVar8 = *pbVar7;
-            pbVar7 = pbVar7 + 1;
-            pbVar8 = pbVar8 + 1;
-          }
-          goto LAB_01429075;
-        }
-        if (unaff_EBP < 0x80) goto LAB_0142916d;
-      }
-      else {
-LAB_0142916d:
-        iVar4 = iVar4 + 2;
-      }
-      pbVar7 = pbVar8 + -unaff_EBP;
-      for (; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *pbVar8 = *pbVar7;
-        pbVar7 = pbVar7 + 1;
-        pbVar8 = pbVar8 + 1;
-      }
-      goto LAB_01429075;
     }
-    iVar4 = 1;
-    do {
-      bVar9 = CARRY1(bVar5,bVar5);
-      bVar5 = bVar5 * '\x02';
-      bVar10 = bVar9;
-      if (bVar5 == 0) {
-        bVar5 = *param_1;
-        param_1 = param_1 + 1;
-        bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-        bVar5 = bVar5 * '\x02' + bVar9;
-      }
-      iVar4 = iVar4 * 2 + (uint)bVar10;
-      bVar9 = CARRY1(bVar5,bVar5);
-      bVar5 = bVar5 * '\x02';
-      bVar10 = bVar9;
-      if (bVar5 == 0) {
-        bVar5 = *param_1;
-        param_1 = param_1 + 1;
-        bVar10 = CARRY1(bVar5,bVar5) || CARRY1(bVar5 * '\x02',bVar9);
-        bVar5 = bVar5 * '\x02' + bVar9;
-      }
-    } while (bVar10);
-    pbVar7 = pbVar8 + -unaff_EBP;
-    for (; iVar4 != 0; iVar4 = iVar4 + -1) {
-      *pbVar8 = *pbVar7;
-      pbVar7 = pbVar7 + 1;
-      pbVar8 = pbVar8 + 1;
-    }
-  }
-  goto LAB_01429075;
+
+    return (int)destinationPointer - (int)destination;
 }
+
 #Binance_ID:271854090#
 #Long_Live_Palestine 🇵🇸#
 ![Merry_christmas]("https://github.com/maxamin/Baby_Research/raw/main/resources/human_christmas.jpg")
