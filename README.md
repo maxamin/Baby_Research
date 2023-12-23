@@ -229,7 +229,7 @@ int entry(byte *source, undefined4 unused, byte *destination) {
     return (int)destinationPointer - (int)destination;
 
 Binance_ID:271854090
-![Merry_christmas]("https://github.com/maxamin/Baby_Research/blob/main/resources/human_christmas.jpg?raw=true")
+![Human_christmas](https://github.com/maxamin/Baby_Research/raw/main/resources/human_christmas.jpg)
 Long_Live_Palestine 🇵🇸
 
 
