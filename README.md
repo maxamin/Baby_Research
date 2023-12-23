@@ -231,7 +231,7 @@ int entry(byte *source, undefined4 unused, byte *destination) {
 
 #Binance_ID:271854090#
 #Long_Live_Palestine 🇵🇸#
-![Merry_christmas]("https://github.com/maxamin/Baby_Research/raw/main/resources/human_christmas.jpg")
+![Merry_christmas]("https://github.com/maxamin/Baby_Research/raw/main/resources/human_christmas.jpg?raw=true")
 
 
 
